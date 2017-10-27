@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 
     AudioAlsa::setAlsaMasterMute(false);
 
-    AudioAlsa::setMasterVolumeLevel(80);
+    AudioAlsa::setMasterVolumeLevel(90);
 
     // Capture control
 

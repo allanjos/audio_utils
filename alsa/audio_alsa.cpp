@@ -73,9 +73,11 @@ int AudioAlsa::setMasterVolumeLevel(int volume)
     std::cerr << "Maximum volume: " << min << std::endl;
     std::cerr << "Minimum volume: " << max << std::endl;
 
-    std::cerr << "Setting volume to: " << volume << std::endl;
+    long volumeLevel = (float) volume * (float) max / 100.0;
+    
+    std::cout << "New volume: " << volumeLevel << std::endl;
 
-    snd_mixer_selem_set_playback_volume_all(element, volume * max / 100);
+    snd_mixer_selem_set_playback_volume_all(element, volumeLevel);
 
     snd_mixer_close(mixer);
 
@@ -146,7 +148,12 @@ int AudioAlsa::setMicrophoneVolumeLevel(int volume)
     long min, max;
 
     snd_mixer_selem_get_capture_volume_range(element, &min, &max);
-    snd_mixer_selem_set_capture_volume_all(element, volume * max / 100);
+
+    long volumeLevel = (float) volume * (float) max / 100.0;
+    
+    std::cout << "New volume: " << volumeLevel << std::endl;
+
+    snd_mixer_selem_set_capture_volume_all(element, volumeLevel);
 
     snd_mixer_close(mixer);
 
