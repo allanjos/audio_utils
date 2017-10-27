@@ -1,0 +1,2 @@
+*.o
+alsa/audio_alsa
