@@ -3,7 +3,7 @@
 #include <alsa/control.h>
 #include "audio_alsa.h"
 
-int AudioAlsa::setAlsaMasterMute(bool mute)
+int AudioAlsa::setMasterMute(bool mute)
 {
     snd_mixer_t *mixer;
 
@@ -84,7 +84,7 @@ int AudioAlsa::setMasterVolumeLevel(int volume)
     return 0;
 }
 
-int AudioAlsa::setAlsaMicrophoneMute(bool mute)
+int AudioAlsa::setMicrophoneMute(bool mute)
 {
     snd_mixer_t *mixer;
 

@@ -4,13 +4,13 @@ int main(int argc, char *argv[])
 {
     // Playback control
 
-    AudioAlsa::setAlsaMasterMute(false);
+    AudioAlsa::setMasterMute(false);
 
     AudioAlsa::setMasterVolumeLevel(90);
 
     // Capture control
 
-    AudioAlsa::setAlsaMicrophoneMute(false);
+    AudioAlsa::setMicrophoneMute(false);
 
     AudioAlsa::setMicrophoneVolumeLevel(80);
 
